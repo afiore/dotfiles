@@ -24,38 +24,31 @@ ZSH_THEME="norm"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby redis-cli rails3 rake rvm thor bundler)
+plugins=(git ruby redis-cli rails3 rake cake rvm thor bundler github cap lein node npm gem osx rails3 pip vagrant thor)
+
+if [[ $(uname) == 'Darwin' ]]; then
+  plugins += ('Darwin')
+fi
 
 source $ZSH/oh-my-zsh.sh
 
 
-# add node to the path
-export PATH=/usr/local/bin:$PATH
-
-#add android sdk tools to the path
 
 # paths
-export PATH="/usr/local/bin:$HOME/.rvm/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-#$HOME/.rvm/gems/ruby-1.9.2-p290/bin"
+export PATH="$HOME/.rvm/bin:$HOME/bin"
 
-# Customize to your needs...
-export PATH=/usr/lib/postgresql/9.1/bin/:$PATH
+if [[ $(uname) == 'Linux' ]]; then
+  export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+  export PATH=/usr/lib/postgresql/9.1/bin/:$PATH
+fi
+
 
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
-# load npm completion
-#source $HOME/.zsh/npm
-#fpath=(~/.zsh/Completion $fpath)
-#
-##jshint config
-#export JS_CMD=$HOME/local/node/bin/node
-
-#export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export EDITOR=vim
-
 
 # Tmuxminator gem
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
