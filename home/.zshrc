@@ -32,23 +32,17 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-
-
 # paths
-export PATH="$HOME/.rvm/bin:$HOME/bin"
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
 
 if [[ $(uname) == 'Linux' ]]; then
-  export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+  export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
   export PATH=/usr/lib/postgresql/9.1/bin/:$PATH
 fi
 
 
-
-
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-
 export EDITOR=vim
-
 # Tmuxminator gem
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
