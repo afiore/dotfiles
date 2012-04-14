@@ -27,7 +27,7 @@ ZSH_THEME="norm"
 plugins=(git ruby redis-cli rails3 rake cake rvm thor bundler github cap lein node npm gem osx rails3 pip vagrant thor)
 
 if [[ $(uname) == 'Darwin' ]]; then
-  plugins += ('Darwin')
+  plugins+=('brew' 'osx')
 fi
 
 source $ZSH/oh-my-zsh.sh
