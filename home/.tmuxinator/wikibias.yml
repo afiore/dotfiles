@@ -1,0 +1,17 @@
+# ~/.tmuxinator/wikibias.yml
+# you can make as many tabs as you wish...
+
+project_name: Tmuxinator
+project_root: ~/code/wikibias
+#rvm: 1.9.3-p125@wikibias (Not needed as I need to source the project's .rvmrc file in order to use the 'mux' command 
+pre: sudo service redis-server start
+tabs:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - vim
+        - #empty, will just run plain bash
+  - guard: bundle exec guard
+  - server: bundle exec rackup
+  - resque: QUEUE=main VVERBOSE=true bundle exec rake resque:work
+  - resque_web: resque-web -p 8282 && google-chrome http://localhost:8282
