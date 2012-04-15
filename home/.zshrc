@@ -24,7 +24,7 @@ ZSH_THEME="norm"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby redis-cli rails3 rake cake rvm thor bundler github cap lein node npm gem osx rails3 pip vagrant thor)
+plugins=(git ruby redis-cli rails3 rake cake rvm thor bundler github cap lein node npm gem osx rails3 pip vagrant thor tmux)
 
 if [[ $(uname) == 'Darwin' ]]; then
   plugins+=('brew' 'osx')
