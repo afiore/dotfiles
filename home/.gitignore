@@ -1,0 +1,7 @@
+# Global .gitignore file
+# Activate with: git config --global core.excludesfile ~/.gitignore
+
+# Ignore vim temporary files
+
+*~
+*.swp

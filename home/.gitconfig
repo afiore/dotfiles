@@ -31,3 +31,5 @@
 [github]
 	user = afiore
 	token = cbddede653756d0af35a7af4fda3f132
+[core]
+	excludesfile = $HOME/.gitignore
