@@ -66,7 +66,10 @@ set background=dark
 colorscheme delek
 
 " powerline
-let g:Powerline_symbols = 'fancy'
+if system('uname') == "Linux"
+  let g:Powerline_symbols = 'fancy'
+endif
+
 
 " vimclojure stuff
 let vimclojure#FuzzyIndent=1
@@ -101,3 +104,5 @@ Bundle 'sickill/vim-pasta'
 Bundle 'mudge/runspec.vim'
 Bundle 'ervandew/supertab'
 Bundle 'benmills/vimux'
+Bundle 'sjl/clam.vim'
+
