@@ -1,0 +1,25 @@
+# Tmux
+
+## Reloading
+
+    tmux source-file ~/.tmux.conf
+
+## Moving windows
+
+    swap-window -s SOURCE_INDEX -t TARGET_INDEX
+
+### Examples:
+
+To move window number 3 to the beginning of the stack (assuming the stack index starts with 1 and not 0):
+
+    swap-window -s 3 -t 1
+
+The `-s` option can be omitted if the source window is the currently active one:
+
+    swap-window -t 1
+
+### Key binding:
+
+Move the current window to the beginning when `<CTRL-b><T>` are pressed:
+
+    bind-key T swap-window -t 1
