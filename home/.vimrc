@@ -47,8 +47,6 @@ nmap <C-Down> ]e
 " Whitespace stuff
 set nowrap
 set tabstop=2
-set shiftwidth=2
-set softtabstop=2
 set expandtab
 set sw=2 " no of spaces for indenting
 set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
