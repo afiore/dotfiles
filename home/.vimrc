@@ -67,7 +67,7 @@ set background=dark
 colorscheme delek
 
 " powerline
-if system('uname') == "Linux"
+if system("uname") ==# "Linux\n"
   let g:Powerline_symbols = 'fancy'
 endif
 
