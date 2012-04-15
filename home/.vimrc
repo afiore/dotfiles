@@ -71,6 +71,14 @@ if system("uname") ==# "Linux\n"
   let g:Powerline_symbols = 'fancy'
 endif
 
+" Switch on spell checking and set filetype to markdown when editing 
+" cheat sheet files
+function SheetSetup()
+  set spell
+  set filetype=markdown
+endfunction
+
+au BufRead ~/.sheets/* call SheetSetup()
 
 " vimclojure stuff
 let vimclojure#FuzzyIndent=1
@@ -79,7 +87,7 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
+"let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
 
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
