@@ -27,7 +27,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 set encoding=utf-8
 
-" vim fashism
+" vim fascism
 "inoremap  <Up>     <NOP>
 "inoremap  <Down>   <NOP>
 "inoremap  <Left>   <NOP>
@@ -37,11 +37,12 @@ set encoding=utf-8
 "noremap   <Left>   <NOP>
 "noremap   <Right>  <NOP>
 
+"set leader
+let mapleader="`"
 
-nmap <silent> <leader>s :set nolist!<CR>
-" Swap lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+" quick edit and source .vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 
 " Whitespace stuff
@@ -80,29 +81,5 @@ let vimclojure#ParenRainbow=1
 let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
 
-" vim plugin bundle
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/HTML-AutoCloseTag'
-Bundle 'scrooloose/nerdtree'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-rhubarb'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rvm'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/VimClojure'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'sickill/vim-pasta'
-Bundle 'mudge/runspec.vim'
-Bundle 'ervandew/supertab'
-Bundle 'benmills/vimux'
-Bundle 'sjl/clam.vim'
-
+" source Vim's plugin bundle
+source $HOME/.vim/bundle.vim
