@@ -3,6 +3,6 @@ home/.zsh-update
 home/.vim/bundle/*
 !home/.vim/bundle/vundle
 # Ignore all tuxminator config files except the ones I explicitly whitelist
-home/.vim/tmuxminator/*
-!home/.vim/tmuxminator/wikibias.yml
+home/.tmuxminator/*
+!home/.tmuxminator/wikibias.yml
 
