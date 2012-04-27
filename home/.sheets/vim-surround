@@ -1,0 +1,89 @@
+# Surround: Tim pope's plugin for surrounding text in vim
+
+## 'cs': change delimiters
+
+Given the input: 
+
+    "hello world"
+
+Change double in single brackets
+
+    cs"'
+
+Output:
+
+    'Hello world'
+
+Similarly, a chunk of text can be wrapped into a tag by typing:
+
+    cs'<strong>
+
+Output:
+
+    <strong>Hello world</strong>
+
+Now, to unwrap a tag and return to a quoted string, use the `t` key
+
+    cst"
+
+Output:
+
+    "Hello world"
+
+## 'ds' : remove delimiters
+
+Given the input:
+
+    <quote>The quick brown fox</quote>
+
+The 'quote' tag can be removed by typing:
+
+     dst
+
+Output:
+   
+    The quick brown fox
+
+##  'ysiw': wrap single words
+
+Given the input "Hello world", with the cursor on the first world hello, type:
+
+    ysiw]
+
+Output
+
+    "[Hello] world"
+
+## 'yss': wrap an entire line
+
+Given the input:
+
+    the quick brown fox...
+
+The entire line can be wrapped in parenthesis by typing:
+
+    yss)
+
+Output:
+
+    (the quick brown fox...)
+
+## Wrapping a visual selection
+
+Given the input:
+
+   <foo>
+     <bar />
+   </foo>
+
+Selected in line-wise visual mode 'V', type: 
+
+    S<bacon bla="bla">
+
+Outpu:
+
+   <bacon bla="bla">
+     <foo>
+       <bar />
+     </foo>
+   </bacon>
