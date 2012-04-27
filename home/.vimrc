@@ -42,8 +42,8 @@ let mapleader="`"
 
 " quick edit and source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
+" autoreload vim
+au BufWritePost .vimrc source $MYVIMRC
 
 " Whitespace stuff
 set nowrap
@@ -73,7 +73,7 @@ endif
 
 " Switch on spell checking and set filetype to markdown when editing 
 " cheat sheet files
-function SheetSetup()
+function! SheetSetup()
   set spell
   set filetype=markdown
 endfunction
@@ -81,12 +81,13 @@ endfunction
 au BufRead ~/.sheets/* call SheetSetup()
 
 " vimclojure stuff
+au BufRead,BufNewFile *.clj set filetype=clojure
 let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun = 1
+let vimclojure#WantNailgun = 0
 "let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
 
 " source Vim's plugin bundle
