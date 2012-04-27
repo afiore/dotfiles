@@ -33,10 +33,10 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # paths
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
+export PATH="$HOME/.rvm/bin:/usr/local/bin:$HOME/bin:$PATH"
 
 if [[ $(uname) == 'Linux' ]]; then
-  export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+  export PATH="$PATH:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
   export PATH=/usr/lib/postgresql/9.1/bin/:$PATH
 fi
 
