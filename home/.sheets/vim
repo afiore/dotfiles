@@ -71,6 +71,10 @@ Fortunately, for each mapping command, vim provides a non-recursive variant:
 
 **ALWAYS** use the non recursive mapping variants!
 
+#### More complex example: a shortcut for wrapping words in double quotes
+
+    :nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+
 ### Leaders
 
 The VIM leader is a convenient, non assigned key used to prefix custom key bindings. The leader can be set using:

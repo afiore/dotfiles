@@ -33,3 +33,23 @@
 	token = cbddede653756d0af35a7af4fda3f132
 [core]
 	excludesfile = $HOME/.gitignore
+  name = Andrea Fiore
+  email = andrea.giulio.fiore@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+[merge]
+  tool = colordiff
+  summary = true
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+[push]
+  default = matching

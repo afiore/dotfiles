@@ -28,22 +28,22 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 set encoding=utf-8
 
 " vim fascism
-"inoremap  <Up>     <NOP>
-"inoremap  <Down>   <NOP>
-"inoremap  <Left>   <NOP>
-"inoremap  <Right>  <NOP>
-"noremap   <Up>     <NOP>
-"noremap   <Down>   <NOP>
-"noremap   <Left>   <NOP>
-"noremap   <Right>  <NOP>
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
 "set leader
 let mapleader="`"
 
 " quick edit and source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-
+" autoreload vim
+au BufWritePost .vimrc source $MYVIMRC
 
 " Whitespace stuff
 set nowrap
@@ -73,7 +73,7 @@ endif
 
 " Switch on spell checking and set filetype to markdown when editing 
 " cheat sheet files
-function SheetSetup()
+function! SheetSetup()
   set spell
   set filetype=markdown
 endfunction
@@ -81,6 +81,7 @@ endfunction
 au BufRead ~/.sheets/* call SheetSetup()
 
 " vimclojure stuff
+au BufRead,BufNewFile *.clj set filetype=clojure
 let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1

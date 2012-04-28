@@ -1,0 +1,33 @@
+# Leningen
+
+## Generate a new project
+
+    lein new project-name
+
+## Setup
+
+    vim project-name/project.clj
+
+ Add the required libraries:
+
+    (defproject project-name "1.0.0-SNAPSHOT"
+      :description "FIXME: write description"
+      :dependencies [[org.clojure/clojure "1.3.0"]
+                     [quil "1.3.0"]])
+ 
+ Install the dependencies
+
+    lein dep 
+
+## Add a main method at the bottom of the file
+
+    vim src/core/project-name.clj 
+
+    (defn -main [] 
+      (println "hello world"))
+
+
+## Run project
+
+    lein run -m project-name.core
+
