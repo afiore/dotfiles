@@ -5,10 +5,9 @@ set nocompatible
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-syntax on
 filetype plugin indent on
 
+syntax on
 "set number
 set ruler
 
@@ -23,7 +22,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+"set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 set encoding=utf-8
 
@@ -63,8 +62,8 @@ set laststatus=2 " Always show the statusline
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 
 "colourscheme
-set background=dark
-colorscheme delek
+"set background=dark
+colorscheme vividchalk
 
 " powerline
 if system("uname") ==# "Linux\n"
@@ -78,8 +77,21 @@ function! SheetSetup()
   set filetype=markdown
 endfunction
 
-au BufRead ~/.sheets/* call SheetSetup()
+" Rename current file:
+" https://github.com/garybernhardt/dotfiles/blob/master/.vimrc)
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>n :call RenameFile()<cr>
 
+
+au BufRead ~/.sheets/* call SheetSetup()
 " vimclojure stuff
 au BufRead,BufNewFile *.clj set filetype=clojure
 let vimclojure#FuzzyIndent=1
