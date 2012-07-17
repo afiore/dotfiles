@@ -31,3 +31,10 @@ if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
     warn "[WARN] cannot load Rails console commands (Not on Rails2 or Rails3?)"
   end
 end
+
+# Have ActiveRecord log SQL queries to standard error, so I can see them
+if defined?(ActiveRecord)
+  require 'logger'
+  ActiveRecord::Base.logger = Logger.new(STDERR)
+end
+
