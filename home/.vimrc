@@ -27,14 +27,14 @@ set wildmode=list:longest,list:full
 set encoding=utf-8
 
 " vim fascism
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
 
 "set leader
 let mapleader="`"
@@ -76,6 +76,7 @@ function! SheetSetup()
   set spell
   set filetype=markdown
 endfunction
+au BufRead ~/.sheets/* call SheetSetup()
 
 " Rename current file:
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc)
@@ -90,8 +91,10 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
+"autodetect puppet files
+au BufRead,BufNewFile *.pp set filetype=puppet
 
-au BufRead ~/.sheets/* call SheetSetup()
+
 " vimclojure stuff
 au BufRead,BufNewFile *.clj set filetype=clojure
 let vimclojure#FuzzyIndent=1
@@ -104,3 +107,6 @@ let vimclojure#WantNailgun = 0
 
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
+
+"go to normal mode from insert mode
+imap jk <esc>
