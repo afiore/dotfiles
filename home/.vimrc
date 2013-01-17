@@ -8,7 +8,7 @@ call vundle#rc()
 filetype plugin indent on
 
 syntax on
-"set number
+set number
 set ruler
 
 " Set encoding
