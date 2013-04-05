@@ -1,6 +1,5 @@
 " vim:filetype=vim
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/HTML-AutoCloseTag'
 Bundle 'scrooloose/nerdtree'
 Bundle 'godlygeek/tabular'
@@ -26,3 +25,4 @@ Bundle 'kshenoy/vim-signature'
 Bundle 'mileszs/ack.vim'
 Bundle 'rodjek/vim-puppet'
 Bundle 'sleistner/vim-jshint'
+Bundle 'tomasr/molokai'

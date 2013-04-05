@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/Users/a.fiore/code/bdj-jobs'
-let g:netrw_dirhist_2='/Users/a.fiore/.tmuxinator'
-let g:netrw_dirhist_3='/Users/a.fiore/code/puppet-modules/asimov'
-let g:netrw_dirhist_4='/Users/a.fiore/code/asimov/spec/controllers/v1'
-let g:netrw_dirhist_5='/Users/a.fiore/code/events/features/admins/events'
