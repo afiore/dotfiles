@@ -10,9 +10,11 @@ filetype plugin indent on
 syntax on
 set number
 set ruler
+set cursorline
 
 " Set encoding
 set encoding=utf-8
+
 
 " Searching
 set hlsearch
@@ -42,7 +44,7 @@ let mapleader="`"
 " quick edit and source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " autoreload vim
-au BufWritePost .vimrc source $MYVIMRC
+"au BufWritePost .vimrc source $MYVIMRC
 
 " Whitespace stuff
 set nowrap
@@ -51,7 +53,6 @@ set expandtab
 set sw=2 " no of spaces for indenting
 set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
 set list listchars=tab:»·,trail:·
-
 
 
 " Highlight search terms...
@@ -63,12 +64,12 @@ set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 
 "colourscheme
 "set background=dark
-colorscheme vividchalk
+colorscheme molokai
 
-" powerline
-if system("uname") ==# "Linux\n"
-  let g:Powerline_symbols = 'fancy'
-endif
+"" powerline
+"if system("uname") ==# "Linux\n"
+"  let g:Powerline_symbols = 'fancy'
+"endif
 
 " Switch on spell checking and set filetype to markdown when editing 
 " cheat sheet files
@@ -94,19 +95,5 @@ map <leader>n :call RenameFile()<cr>
 "autodetect puppet files
 au BufRead,BufNewFile *.pp set filetype=puppet
 
-
-" vimclojure stuff
-au BufRead,BufNewFile *.clj set filetype=clojure
-let vimclojure#FuzzyIndent=1
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
-let vimclojure#WantNailgun = 0
-"let vimclojure#NailgunClient = $HOME . "/.vim/lib/vimclojure-nailgun-client/ng"
-
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
-
-"go to normal mode from insert mode
-imap jk <esc>

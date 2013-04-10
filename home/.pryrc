@@ -3,7 +3,6 @@ Pry.config.should_load_plugins = false
 # Pry.plugins["doc"].activate!
 
 begin
-  require 'awesome_print'
   require 'pry-coolline'
   require 'pry-nav'
   Pry.config.print = proc { |output, value| output.puts value.ai }
@@ -20,7 +19,7 @@ rails = File.join Dir.getwd, 'config', 'environment.rb'
 
 if File.exist?(rails) && ENV['SKIP_RAILS'].nil?
   require rails
-  
+
   if Rails.version[0..0] == "2"
     require 'console_app'
     require 'console_with_helpers'
