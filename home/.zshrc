@@ -45,3 +45,6 @@ fi
 export EDITOR=vim
 # Tmuxminator gem
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# ensure tmux plays well with .rvmrc files
+cd ..;1
