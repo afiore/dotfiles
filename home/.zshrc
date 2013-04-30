@@ -33,7 +33,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # paths
-export PATH="$HOME/.rvm/bin:/usr/local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.rvm/bin:/usr/local/bin:$HOME/bin:$PATH:/usr/local/share/npm/bin"
 
 if [[ $(uname) == 'Linux' ]]; then
   export PATH="$PATH:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
@@ -47,4 +47,4 @@ export EDITOR=vim
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # ensure tmux plays well with .rvmrc files
-cd ..;1
+#cd ..;1
