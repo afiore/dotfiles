@@ -11,10 +11,10 @@ syntax on
 set number
 set ruler
 set cursorline
+set cc=80
 
 " Set encoding
 set encoding=utf-8
-
 
 " Searching
 set hlsearch
@@ -24,7 +24,7 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-"set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.hi,doc
 
 set encoding=utf-8
 
@@ -53,6 +53,7 @@ set expandtab
 set sw=2 " no of spaces for indenting
 set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
 set list listchars=tab:»·,trail:·
+set backspace=indent,start,eol
 
 
 " Highlight search terms...
@@ -63,7 +64,6 @@ set laststatus=2 " Always show the statusline
 set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 
 "colourscheme
-"set background=dark
 colorscheme molokai
 
 "" powerline
@@ -94,6 +94,12 @@ map <leader>n :call RenameFile()<cr>
 
 "autodetect puppet files
 au BufRead,BufNewFile *.pp set filetype=puppet
+"au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile, *.json.erb set filetype=javascript
 
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
+
+let g:syntastic_disabled_filetypes = ['puppet']
+
+abb bp require 'pry'; binding.pry
