@@ -1,6 +1,6 @@
 home/.zsh-update
 # Ignore all sub-directories of .vim/bundle except 'vundle' (the vim package manager)
-home/.vim/bundle/*
+home/.vim/bundle
 !home/.vim/bundle/vundle
 # Ignore all tuxminator config files except the ones I explicitly whitelist
 home/.tmuxminator/*

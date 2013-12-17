@@ -24,7 +24,7 @@ ZSH_THEME="norm"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby redis-cli rails3 rake cake rvm thor bundler github cap lein node npm gem osx rails3 pip vagrant thor tmux)
+plugins=(git)
 
 if [[ $(uname) == 'Darwin' ]]; then
   plugins+=('brew' 'osx')
@@ -33,18 +33,19 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # paths
-export PATH="$HOME/.rvm/bin:/usr/local/bin:$HOME/bin:$PATH"
+export PATH="$HOME:/usr/local/bin:$HOME/bin:$PATH:/usr/local/share/npm/bin"
 
 if [[ $(uname) == 'Linux' ]]; then
   export PATH="$PATH:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
   export PATH=/usr/lib/postgresql/9.1/bin/:$PATH
 fi
 
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# DISABLED: using rbenv now
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 export EDITOR=vim
 # Tmuxminator gem
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+#[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
-# ensure tmux plays well with .rvmrc files
-cd ..;1
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)";
