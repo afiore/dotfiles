@@ -24,27 +24,27 @@ set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*,*.hi,doc
+"set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 set encoding=utf-8
 
-" vim fascism
-"inoremap  <Up>     <NOP>
-"inoremap  <Down>   <NOP>
-"inoremap  <Left>   <NOP>
-"inoremap  <Right>  <NOP>
-"noremap   <Up>     <NOP>
-"noremap   <Down>   <NOP>
-"noremap   <Left>   <NOP>
-"noremap   <Right>  <NOP>
-
 "set leader
 let mapleader="`"
+
+set tags=./tags,tags,../tags
 
 " quick edit and source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " autoreload vim
 "au BufWritePost .vimrc source $MYVIMRC
+"
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|target|log)$',
+  \ 'file': '\v\.(exe|so|dll|gem)$'
+  \ }
+
+
 
 " Whitespace stuff
 set nowrap
@@ -53,23 +53,16 @@ set expandtab
 set sw=2 " no of spaces for indenting
 set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
 set list listchars=tab:»·,trail:·
-set backspace=indent,start,eol
-
 
 " Highlight search terms...
 set hlsearch
 set incsearch " ...dynamically as they are typed.
 set nocompatible " Disable vi-compatibility
 set laststatus=2 " Always show the statusline
-set t_Co=256 " Explicitly tell vim that the terminal has 256 colors
 
 "colourscheme
-colorscheme molokai
-
-"" powerline
-"if system("uname") ==# "Linux\n"
-"  let g:Powerline_symbols = 'fancy'
-"endif
+set background=dark
+colorscheme freshcut
 
 " Switch on spell checking and set filetype to markdown when editing 
 " cheat sheet files
@@ -92,14 +85,18 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-"autodetect puppet files
+"autodetect file formats
 au BufRead,BufNewFile *.pp set filetype=puppet
-"au BufRead,BufNewFile *.scala set filetype=scala
-au BufRead,BufNewFile, *.json.erb set filetype=javascript
+au BufRead,BufNewFile *.scala set filetype=scala
+
+"let g:syntastic_haskell_checkers=['ghc_mod', 'hlint']
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
 
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
 
-let g:syntastic_disabled_filetypes = ['puppet']
+"go to normal mode from insert mode
+imap jk <esc>
 
+"abbreviation for binding.pry
 abb bp require 'pry'; binding.pry

@@ -1,0 +1,9 @@
+[alias]
+  st = status
+  co = checkout
+  br = branch
+[user]
+	email = andrea.fiore@composable.io
+	name = Andrea Fiore
+[core]
+	excludesfile = /home/andrea/.gitignore

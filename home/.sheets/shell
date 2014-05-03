@@ -1,5 +1,0 @@
-# Shell tips and tricks
-
-Search and replace using `ack` in combination with GNU `sed`:
-
-    ack --print0 -irl 'replace_me' location/ | xargs -0 -L1 sed -i '' 's/replace_me/with_me/g'
