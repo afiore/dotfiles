@@ -21,7 +21,7 @@ setopt append_history share_history histignorealldups
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=$HISTSIZE
-#bindkey -v
+bindkey -v
 # End of lines configured by zsh-newuser-install
 bindkey '^R' history-incremental-search-backward
 setopt hist_ignore_all_dups
