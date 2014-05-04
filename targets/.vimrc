@@ -40,18 +40,15 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 "
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|target|log)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|target|log|vendor|public)$',
   \ 'file': '\v\.(exe|so|dll|gem)$'
   \ }
-
-
 
 " Whitespace stuff
 set nowrap
 set tabstop=2
 set expandtab
-set sw=2 " no of spaces for indenting
-set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
+set sw=2 " no of spaces for indenting set ts=2 " show \t as 2 spaces and treat 2 spaces as \t when deleting, etc..
 set list listchars=tab:»·,trail:·
 
 " Highlight search terms...
