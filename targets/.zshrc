@@ -34,6 +34,7 @@ prompt pure
 #always include the --color option when calling ls
 alias tmux="TERM=screen-256color tmux"
 alias ls="ls -F --color=auto"
+alias be="bundle exec"
 
 export TERM=screen-256color
 export PATH="$HOME/.rbenv/bin:$HOME/bin:$HOME/.cabal/bin:$PATH"
