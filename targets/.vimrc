@@ -88,6 +88,7 @@ au BufRead,BufNewFile *.scala set filetype=scala
 
 "let g:syntastic_haskell_checkers=['ghc_mod', 'hlint']
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
+let g:syntastic_java_checkers=['']
 
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
