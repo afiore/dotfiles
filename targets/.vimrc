@@ -31,7 +31,7 @@ set encoding=utf-8
 "set leader
 let mapleader="`"
 
-set tags=./tags,tags,../tags
+set tags=./TAGS,TAGS,../TAGS
 
 " quick edit and source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -89,6 +89,8 @@ au BufRead,BufNewFile *.scala set filetype=scala
 "let g:syntastic_haskell_checkers=['ghc_mod', 'hlint']
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
 let g:syntastic_java_checkers=['']
+let g:syntastic_javascript_checkers = ['jshint']
+
 
 " source Vim's plugin bundle
 source $HOME/.vim/bundle.vim
