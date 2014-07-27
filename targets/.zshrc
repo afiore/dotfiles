@@ -39,4 +39,4 @@ alias be="bundle exec"
 export TERM=screen-256color
 export PATH="$HOME/.rbenv/bin:$HOME/bin:$HOME/.cabal/bin:$PATH"
 export EDITOR=/usr/bin/vim
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"

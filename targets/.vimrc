@@ -3,9 +3,8 @@ set nocompatible
 "call pathogen#infect() 
 
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-filetype plugin indent on
+" source Vim's plugin bundle
+source $HOME/.vim/bundle.vim
 
 syntax on
 set number
@@ -90,10 +89,6 @@ au BufRead,BufNewFile *.scala set filetype=scala
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
 let g:syntastic_java_checkers=['']
 let g:syntastic_javascript_checkers = ['jshint']
-
-
-" source Vim's plugin bundle
-source $HOME/.vim/bundle.vim
 
 "go to normal mode from insert mode
 imap jk <esc>
