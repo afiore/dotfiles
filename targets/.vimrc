@@ -57,7 +57,7 @@ set nocompatible " Disable vi-compatibility
 set laststatus=2 " Always show the statusline
 
 "colourscheme
-set background=dark
+"set background=dark
 colorscheme freshcut
 
 " Switch on spell checking and set filetype to markdown when editing 
@@ -66,7 +66,6 @@ function! SheetSetup()
   set spell
   set filetype=markdown
 endfunction
-au BufRead ~/.sheets/* call SheetSetup()
 
 " Rename current file:
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc)
@@ -82,8 +81,7 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 "autodetect file formats
-au BufRead,BufNewFile *.pp set filetype=puppet
-au BufRead,BufNewFile *.scala set filetype=scala
+"au BufRead,BufNewFile *.scala set filetype=scala
 
 "let g:syntastic_haskell_checkers=['ghc_mod', 'hlint']
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
